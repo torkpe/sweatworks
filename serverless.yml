@@ -1,0 +1,103 @@
+# Welcome to serverless. Read the docs
+# https://serverless.com/framework/docs/
+
+# Serverless.yml is the configuration the CLI
+# uses to deploy your code to your provider of choice
+
+# The `service` block is the name of the service
+service: sweatworks
+
+# The `provider` block defines where your service will be deployed
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+
+plugins:
+  - serverless-offline
+
+package:
+  exclude:
+    - frontend-web/**
+# The `functions` block defines what code to deploy
+functions:
+  getAuthors:
+    timeout: 30
+    handler: authorsHandler.getAuthors
+    events:
+      - http:
+          path: authors
+          method: get
+          cors: true
+  getAuthor:
+    timeout: 30
+    handler: authorsHandler.getAuthor
+    events:
+      - http:
+          path: authors/{id}
+          method: get
+          cors: true
+  updateAuthor:
+    timeout: 30
+    handler: authorsHandler.updateAuthor
+    events:
+      - http:
+          path: authors/{id}
+          method: put
+          cors: true
+  deleteAuthor:
+    timeout: 30
+    handler: authorsHandler.deleteAuthor
+    events:
+      - http:
+          path: authors/{id}
+          method: delete
+          cors: true
+  addAuthor:
+    timeout: 30
+    handler: authorsHandler.addAuthor
+    events:
+      - http:
+          path: authors
+          method: post
+          cors: true
+  getPublications:
+    timeout: 30
+    handler: publicationsHandler.getPublications
+    events:
+      - http:
+          path: publications
+          method: get
+          cors: true
+  getPublication:
+    timeout: 30
+    handler: publicationsHandler.getPublication
+    events:
+      - http:
+          path: publications/{id}
+          method: get
+          cors: true
+  updatePublication:
+    timeout: 30
+    handler: publicationsHandler.updatePublication
+    events:
+      - http:
+          path: publications/{id}
+          method: put
+          cors: true
+  deletePublication:
+    timeout: 30
+    handler: publicationsHandler.deletePublication
+    events:
+      - http:
+          path: publications/{id}
+          method: delete
+          cors: true
+  addPublication:
+    timeout: 30
+    handler: publicationsHandler.addPublication
+    events:
+      - http:
+          path: publications
+          method: post
+          cors: true
