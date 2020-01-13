@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://7jw1634f66.execute-api.us-east-1.amazonaws.com/dev';
+export const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export const MODAL = {
   DISPLAY_MODAL: 'DISPLAY_MODAL',
