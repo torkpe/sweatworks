@@ -24,4 +24,8 @@ REACT_APP_BASE_URL=https://7jw1634f66.execute-api.us-east-1.amazonaws.com/dev
 ## API
 * Backend: [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/a20e2b1b9edc4f1d7d6f)
 
-* Frontend: `
+## Frontend
+* URL: `http://sweatworks.herokuapp.com/`
+
+## Test
+ * `npm test`

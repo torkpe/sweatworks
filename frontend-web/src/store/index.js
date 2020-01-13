@@ -6,7 +6,7 @@ const configureStore = () => createStore(
   rootReducer,
   compose(
     applyMiddleware(thunk),
-    process.env.NODE_ENV === 'development' && window.__REDUX_DEVTOOLS_EXTENSION__ ? window.devToolsExtension() : f => f
+    process.env.REACT_APP_NODE_ENV === 'development' && window.__REDUX_DEVTOOLS_EXTENSION__ ? window.devToolsExtension() : f => f
   )
 );
 export default configureStore;
