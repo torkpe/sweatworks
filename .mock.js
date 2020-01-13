@@ -18,7 +18,7 @@ module.exports.pub = jest.mock('./models/publication', () => () => {
   const dbMock = new SequelizeMock();
   const publication = dbMock.define('Publication',  {
     title: 'title3',
-    body: 'some random text for the body',
+    body: 'some random text for the body test',
     authorId: 1,
   });
   publication.associate = function(models) {

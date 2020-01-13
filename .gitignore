@@ -5,3 +5,6 @@ jspm_packages
 # Serverless directories
 .serverless
 frontend-web/node_modules/**
+frontend-web/.firebase/**
+frontend-web/.env
+.env

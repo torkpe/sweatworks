@@ -2,6 +2,11 @@
   "name": "sweatworks",
   "version": "1.0.0",
   "description": "",
+  "jest": {
+    "testPathIgnorePatterns": [
+      "frontend-web"
+    ]
+  },
   "main": "index.js",
   "scripts": {
     "start": "nodemon app.js",

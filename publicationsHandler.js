@@ -21,11 +21,13 @@ const {
 module.exports.getPublications = async (event, context, callback) => {
   const { queryStringParameters } = event;
   let publications;
+  let orderBy = 'DESC';
+  let offset = 0
   if (queryStringParameters) {
     const { searchKey, order } = queryStringParameters;
     const page = queryStringParameters.page || 0;
-    const offset = parseInt(page, 10) * 10;
-    const orderBy = order === 'DESC' || order === 'ASC' ? order : 'DESC';
+    offset = parseInt(page, 10) * 10;
+    orderBy = order === 'DESC' || order === 'ASC' ? order : 'DESC';
 
     if (searchKey) {
       publications = await getPublications(orderBy, searchKey, offset);
@@ -33,7 +35,7 @@ module.exports.getPublications = async (event, context, callback) => {
       publications = await getPublications(orderBy, undefined, offset);
     }
   } else {
-    publications = await getPublications();
+    publications = await getPublications(orderBy, undefined, offset);
   }
   const response = {
     statusCode: 200,
