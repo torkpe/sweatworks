@@ -21,6 +21,13 @@ PS: The frontend interacts directly with the live endpoint: `https://7jw1634f66.
 ### Frontend-web
 REACT_APP_BASE_URL=https://7jw1634f66.execute-api.us-east-1.amazonaws.com/dev
 
+## Seeding / Migrations
+Run
+* `npm run migrate` To run migrations
+* `npm run seed` To run seed
+* `npm run undo:seed` To undo seeding
+* `npm run undo:migrate` To undo migrations
+
 ## API
 * Backend: [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/a20e2b1b9edc4f1d7d6f)
 

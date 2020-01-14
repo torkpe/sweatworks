@@ -10,7 +10,11 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon app.js",
-    "test": "jest"
+    "test": "jest",
+    "seed": "sequelize db:seed:all",
+    "undo:seed": "sequelize db:seed:undo:all",
+    "migration": "sequelize db:migrate",
+    "undo:migration": "sequelize db:migrate:undo:all"
   },
   "author": "",
   "license": "ISC",
